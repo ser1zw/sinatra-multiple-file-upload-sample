@@ -1,0 +1,12 @@
+<html>
+  <head>
+    <title>Uploader</title>
+  </head>
+  <body>
+    <h1>Upload your files</h1>
+    <form action="/store" method="post" enctype="multipart/form-data">
+      <input type="file" name="files[]" multiple>
+      <input type="submit" value="Upload">
+    </form>
+  </body>
+</html>
