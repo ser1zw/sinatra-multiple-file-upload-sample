@@ -5,13 +5,13 @@ The files will be stored in `uploaded_files`.
 
 
 ## Environment
-- Ruby 2.7.1
-- Sinatra 2.0.8.1
+- Ruby 3.0.2
+- Sinatra 2.1.0
 
 
 ## Setup
 ```console
-$ bundle config set path 'vendor/bundle'
+$ bundle config set --local path 'vendor/bundle'
 $ bundle install 
 ```
 
