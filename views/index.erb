@@ -3,10 +3,17 @@
     <title>Uploader</title>
   </head>
   <body>
-    <h1>Upload your files</h1>
+    <h1>File upload</h1>
     <form action="/store" method="post" enctype="multipart/form-data">
       <input type="file" name="files[]" multiple>
       <input type="submit" value="Upload">
     </form>
+
+    <h1>Uploaded files</h1>
+    <ul>
+    <% files.each do |filename| %>
+      <li><a href="/download/<%= filename %>"><%= filename %></a></li>
+    <% end %>
+    <ul>
   </body>
 </html>

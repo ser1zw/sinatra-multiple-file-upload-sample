@@ -4,7 +4,13 @@ set :bind, '0.0.0.0'
 set :storage_path, File.dirname(__FILE__) + '/uploaded_files'
 
 get '/' do
-  erb :index
+  files = Dir.glob("*", base: settings.storage_path)
+  erb :index, locals: { files: files }
+end
+
+get '/download/:filename' do
+  filename = params['filename']
+  send_file "#{settings.storage_path}/#{filename}"
 end
 
 post '/store' do
